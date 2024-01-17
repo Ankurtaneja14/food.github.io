@@ -71,22 +71,23 @@ function uploadImage() {
     const uploadForm = document.getElementById("uploadForm");
     const imageInput = document.getElementById("imageInput");
     const uploadedImage = document.getElementById("uploadedImage");
-  
+
     const formData = new FormData(uploadForm);
-  
+
     fetch("upload.php", {
-      method: "POST",
-      body: formData,
+        method: "POST",
+        body: formData,
     })
-      .then((response) => response.text())
-      .then((result) => {
+    .then((response) => response.text())
+    .then((result) => {
         alert(result);
         uploadedImage.src = "uploads/" + imageInput.files[0].name;
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         console.error("Error:", error);
-      });
-  }
+    });
+}
+
   document.addEventListener('DOMContentLoaded', function () {
     var map;
   
